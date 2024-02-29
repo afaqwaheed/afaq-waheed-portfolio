@@ -35,3 +35,17 @@ Stack trace:
 #9 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-admin\admin-ajax.php(188): do_action('wp_ajax_wp_arch...')
 #10 {main}
   thrown in C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\class-ss-util.php on line 540
+[29-Feb-2024 14:28:12 UTC] PHP Fatal error:  Uncaught TypeError: array_key_exists(): Argument #2 ($array) must be of type array, string given in C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\class-ss-util.php:540
+Stack trace:
+#0 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\class-ss-util.php(540): array_key_exists('cancel', '')
+#1 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\tasks\class-ss-task.php(46): Simply_Static\Util::add_archive_status_message('', 'cancel', 'Cancelling job')
+#2 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\tasks\class-ss-cancel-task.php(22): Simply_Static\Task->save_status_message('Cancelling job')
+#3 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\class-ss-archive-creation-job.php(150): Simply_Static\Cancel_Task->perform()
+#4 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\vendor\a5hleyrich\wp-background-processing\classes\wp-background-process.php(516): Simply_Static\Archive_Creation_Job->task('cancel')
+#5 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\vendor\a5hleyrich\wp-background-processing\classes\wp-background-process.php(333): WP_Background_Process->handle()
+#6 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-includes\class-wp-hook.php(324): WP_Background_Process->maybe_handle('')
+#7 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#8 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#10 {main}
+  thrown in C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\class-ss-util.php on line 540
