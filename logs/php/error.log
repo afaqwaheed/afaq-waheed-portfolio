@@ -49,3 +49,4 @@ Stack trace:
 #9 C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
 #10 {main}
   thrown in C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\class-ss-util.php on line 540
+[29-Feb-2024 14:47:41 UTC] PHP Warning:  copy(C:/Users/Shekhani Laptops/Local Sites/afaq-waheed-portfolio/wp-json/wp/v2/posts/1/index.html): Failed to open stream: No such file or directory in C:\Users\Shekhani Laptops\Local Sites\afaq-waheed-portfolio\app\public\wp-content\plugins\simply-static\src\tasks\class-ss-transfer-files-locally-task.php on line 91
