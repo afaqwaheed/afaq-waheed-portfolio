@@ -1,2 +1,2 @@
 # afaq-waheed-portfolio
-Afaq Waheed Portfolio Website
+Afaq Waheed WordPress Developer Portfolio Website
