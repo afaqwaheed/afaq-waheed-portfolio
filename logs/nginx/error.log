@@ -1,3 +1,6 @@
 2024/03/06 21:02:54 [alert] 3744#2680: OpenEvent("ngx_master_11820") failed (2: The system cannot find the file specified)
 2024/03/06 21:21:11 [alert] 8024#1376: OpenEvent("ngx_master_6768") failed (2: The system cannot find the file specified)
 2024/04/14 11:36:41 [alert] 10828#2964: OpenEvent("ngx_master_11300") failed (2: The system cannot find the file specified)
+2024/09/05 05:24:02 [alert] 7764#14540: OpenEvent("ngx_master_14636") failed (2: The system cannot find the file specified)
+2024/09/05 06:12:32 [error] 5364#10116: *4409 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /wp-admin/admin-ajax.php HTTP/1.0", upstream: "fastcgi://127.0.0.1:10002", host: "afaq-waheed-portfolio.local", referrer: "http://afaq-waheed-portfolio.local/wp-admin/post.php?post=33&action=elementor"
+2024/09/05 06:12:32 [error] 5364#10116: *4414 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /wp-admin/admin-ajax.php HTTP/1.0", upstream: "fastcgi://127.0.0.1:10002", host: "afaq-waheed-portfolio.local", referrer: "http://afaq-waheed-portfolio.local/works/?elementor-preview=33&ver=1725497744"

@@ -32,9 +32,7 @@ class Url_Extractor {
 		'base'    => array( 'href' ),
 		'img'     => array( 'src', 'usemap', 'longdesc', 'dynsrc', 'lowsrc', 'srcset', 'data-src', 'data-bg' ),
 		'picture' => array( 'src', 'srcset' ),
-		'source'  => array( 'srcset' ),
 		'amp-img' => array( 'src', 'srcset' ),
-		'link'    => array( 'href' ),
 
 		'applet' => array( 'code', 'codebase', 'archive', 'object' ),
 		'area'   => array( 'href' ),
@@ -58,19 +56,20 @@ class Url_Extractor {
 		'html'         => array( 'manifest', 'background', 'xmlns' ),
 		'source'       => array( 'src', 'srcset' ),
 		'video'        => array( 'src', 'poster' ),
+		'image'        => array( 'href', 'xlink:href', 'src', 'style' ),
 
-		'bgsound' => array( 'src' ),
-		'div'     => array( 'href', 'src', 'style' ),
-		'span'    => array( 'href', 'src', 'style' ),
-		'section' => array( 'style' ),
-		'footer'  => array( 'style' ),
-		'header'  => array( 'style' ),
-		'ilayer'  => array( 'src' ),
-		'table'   => array( 'background' ),
-		'td'      => array( 'background' ),
-		'th'      => array( 'background' ),
-		'layer'   => array( 'src' ),
-		'xml'     => array( 'src' ),
+		'bgsound'      => array( 'src' ),
+		'div'          => array( 'href', 'src', 'style' ),
+		'span'         => array( 'href', 'src', 'style' ),
+		'section'      => array( 'style' ),
+		'footer'       => array( 'style' ),
+		'header'       => array( 'style' ),
+		'ilayer'       => array( 'src' ),
+		'table'        => array( 'background' ),
+		'td'           => array( 'background' ),
+		'th'           => array( 'background' ),
+		'layer'        => array( 'src' ),
+		'xml'          => array( 'src' ),
 
 		'button'   => array( 'formaction', 'style' ),
 		'datalist' => array( 'data' ),
@@ -85,6 +84,7 @@ class Url_Extractor {
 
 		'meta' => array( 'content' ),
 		'link' => array( 'href' ),
+		'atom' => array( 'href' )
 	);
 
 	// /** @const */
@@ -104,7 +104,7 @@ class Url_Extractor {
 
 	/**
 	 * An instance of the options structure containing all options for this plugin
-	 * @var Simply_Static\Options
+	 * @var \Simply_Static\Options
 	 */
 	protected $options = null;
 
@@ -195,7 +195,7 @@ class Url_Extractor {
 			$this->replace_encoded_urls();
 
 			// If activated forced string/replace for URLs.
-			if ( $this->options->get( 'force_replace_url' ) ) {
+			if ( $this->options->get( 'force_replace_url' ) && ( ! $this->options->get( 'use_forms' ) && ! $this->options->get( 'use_comments' ) ) ) {
 				$this->force_replace_urls();
 			}
 		}
@@ -317,7 +317,10 @@ class Url_Extractor {
 
 					if ( $extracted_url !== '' ) {
 						$updated_extracted_url = $this->add_to_extracted_urls( $extracted_url );
-						$attribute_value       = str_replace( $extracted_url, $updated_extracted_url, $attribute_value );
+
+						if ( ! is_null( $updated_extracted_url ) ) {
+							$attribute_value = str_replace( $extracted_url, $updated_extracted_url, $attribute_value );
+						}
 					}
 				}
 				$tag->$attribute_name = $attribute_value;
@@ -491,15 +494,15 @@ class Url_Extractor {
 				$convert_to = '/';
 		}
 
-		if ( $this->is_json( $tag->innerText ) ) {
-			$decoded_text = html_entity_decode( $tag->innerText, ENT_NOQUOTES );
+		if ( $this->is_json( $tag->innerhtmlKeep ) ) {
+			$decoded_text = html_entity_decode( $tag->innerhtmlKeep, ENT_NOQUOTES );
 		} else {
-			$decoded_text = html_entity_decode( $tag->innerText );
+			$decoded_text = html_entity_decode( $tag->innerhtmlKeep );
 		}
 
 		$decoded_text = apply_filters( 'simply_static_decoded_text_in_script', $decoded_text, $this->static_page, $convert_to, $tag, $this );
 
-		$tag->innerText = preg_replace( $regex, $convert_to, $decoded_text );
+		$tag->innerhtmlKeep = preg_replace( $regex, $convert_to, $decoded_text );
 
 		return $tag;
 	}

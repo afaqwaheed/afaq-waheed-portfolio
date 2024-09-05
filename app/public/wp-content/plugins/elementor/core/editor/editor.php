@@ -614,7 +614,11 @@ class Editor {
 				esc_html__( 'Learn more', 'elementor' )
 			),
 			'default' => Experiments_Manager::STATE_INACTIVE,
-			'status' => Experiments_Manager::RELEASE_STATUS_ALPHA,
+			'release_status' => Experiments_Manager::RELEASE_STATUS_BETA,
+			'new_site' => [
+				'default_active' => true,
+				'minimum_installation_version' => '3.23.0',
+			],
 		] );
 	}
 

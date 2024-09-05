@@ -1,11 +1,11 @@
 === Elementor Header & Footer Builder ===
 Contributors: brainstormforce, Nikschavan
-Tags: elementor, header footer builder, header template, footer template, elementor widget, WordPress header, WordPress footer, elementor menu, website header design, footer design, blocks
+Tags: elementor, header footer builder, header template, footer template, elementor widget
 Donate link: https://www.paypal.me/BrainstormForce
 Requires at least: 4.4
-Requires PHP: 5.4
-Tested up to: 6.5
-Stable tag: 1.6.26
+Requires PHP: 7.4
+Tested up to: 6.6
+Stable tag: 1.6.41
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,6 +139,61 @@ This same applies when you are creating your Header/Footer using this plugin.
 5. Default widgets available with Elementor Header & Footer Builder.
 
 == Changelog ==
+
+= 1.6.41 =
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.24 version.
+- Improvement: Implemented widget output caching to enhance page performance.
+- Improvement: Updated the deprecated code in codebase.
+
+= 1.6.40 = 
+- Improvement: Navigation Menu - The dropdown menu now extends to full width when the navigation menu container is set to full width on smaller screens.
+- Fix: Navigation Menu – Console error for undefined property ‘left’.
+
+= 1.6.39 = 
+- Improvement: Updated minimum PHP version requirement to 7.4.
+
+= 1.6.38 =
+- Improvement: Improved code quality syntax and security checks for better coding standards and practices.
+
+= 1.6.37 = 
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.23 version.
+
+= 1.6.36 = 
+- Fix: This update addressed a security bug. Props to Wordfence for privately reporting it to our team. Please make sure you are using the latest version on your website. 
+
+= 1.6.35 = 
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.22 version.
+- Improvement: Updated sanitize SVG function.
+- Fix: Search - Compatibility with Polylang switcher.
+
+= 1.6.34 = 
+- Fix: Navigation Menu - Submenus show up for few seconds during the page load
+- Fix: Navigation Menu - Huge icon show up for few seconds during the page load
+- Fix: Navigation Menu - Unable to click on submenu when top distance is added for dropdown
+
+= 1.6.33 =
+- Fix: Unable to edit the Header/Footer with Elementor in few cases.
+
+= 1.6.32 =
+- Fix: Improved plugin security.
+
+= 1.6.31 =
+- Fix: Conflict with WP SVG Images plugin.
+
+= 1.6.30 =
+- Fix: Improved error messages during plugin activation.
+
+= 1.6.29 =
+- Fix: Navigation Menu – The submenu container opens without hovering over the parent menu item.
+- Fix: This update addressed a security bug. Props to Wordfence.
+
+= 1.6.28 =
+- Fix: Error messages appearing for Display rules.
+
+= 1.6.27 =
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.21 version.
+- Improvement: Compatibility with PHP 8.3 version.
+- Fix: This update addressed a security bug. Props to Wordfence.
 
 = 1.6.26 =
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.20 version.
